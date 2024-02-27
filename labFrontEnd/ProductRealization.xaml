@@ -1,0 +1,60 @@
+﻿<Window x:Class="labFrontEnd.ProductRealization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:labFrontEnd"
+        mc:Ignorable="d"
+        Title="ProductRealization" Height="600" Width="1200" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="ProductList" Margin="10,10,10,10" FontSize="25">
+            <ListView.View>
+
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="40" >ID</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}" Width="100" >Модель</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=SaleDate}" Width="200">дата продажи</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ProductSales}" Width="230">кол-во проданного</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Quantity}" Width="200">че то там еще</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=ProductCoast}" Width="100">цена</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <Label Content="введите продажи продукта"/>
+                <TextBox x:Name="ProductSalesS" Height="50" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Content="введите дату продажи"/>
+                <TextBox x:Name="PoductDataSale" Height="50" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="2">
+                <Label Content="введите кол-во продукта"/>
+                <TextBox x:Name="Quantity" Height="50" Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Grid.Row="3">
+                <Label Content="введите цену продукта"/>
+                <TextBox x:Name="ProductCoast" Height="50" Width="250"/>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Margin="5,12">
+                <Button Content="сохранить" Click="Button_Click"/>
+                <Button Content="изменить" Click="Button_Click_1"/>
+                <Button Content="удалить" Click="Button_Click_2"/>
+                <Button Content="реализация" Click="Button_Click_3"/>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
